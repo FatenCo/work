@@ -1,0 +1,23 @@
+<div class="container my-selection-container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="titlepage">
+        <h2 class="my-selection-title">Ma Sélection de Produits</h2>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="my-selection-items">
+        <div class="my-selection-item" *ngFor="let produit of produitsSelectionnes">
+          <img class="my-selection-image" [src]="produit.image" alt="{{ produit.nom }}">
+          <div class="my-selection-info">
+            <h3 class="my-selection-name">{{ produit.nom }}</h3>
+            <p class="my-selection-description">{{ produit.description }}</p>
+            <p class="my-selection-price">{{ produit.prix }} €</p>
+            <p class="my-selection-availability">{{ produit.disponibilite }}</p>
+          </div>
+          <button class="my-selection-btn" (click)="supprimerProduit(produit)">Supprimer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

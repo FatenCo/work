@@ -1,0 +1,28 @@
+<div class="boutique-form">
+    <form>
+        <h1>paramétre du <span style="color: blueviolet;">boutique</span></h1>
+      <div class="form-group">
+        <label for="imageBoutique">Choisir une image :</label>
+        <input type="file" id="imageBoutique" name="imageBoutique" (change)="onImageSelect($event)" accept="image/*" required>
+      </div>
+      <!-- Affichage de l'image sélectionnée -->
+      <div *ngIf="boutique.image">
+        <label>Image sélectionnée :</label>
+        <img [src]="boutique.image" alt="Image de boutique">
+      </div>
+      <div class="form-group">
+        <label for="nomBoutique">Nom de boutique :</label>
+        <input type="text" id="nomBoutique" name="nomBoutique" [(ngModel)]="boutique.nom" required>
+      </div>
+      <div class="form-group">
+        <label for="urlSite">URL du site :</label>
+        <input type="text" id="urlSite" name="urlSite" [(ngModel)]="boutique.url" required>
+      </div>
+      <div class="form-group">
+        <label for="localisation">Localisation :</label>
+        <input type="text" id="localisation" name="localisation" [(ngModel)]="boutique.localisation" required>
+      </div>
+      <button type="button" (click)="modifierParametres()">Modifier paramètres boutique</button>
+    </form>
+  </div>
+  
